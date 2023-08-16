@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./form.module.css";
 import { validate } from "./validate";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { notify } from "./Toast";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [data, setData] = useState({
@@ -28,9 +26,9 @@ const Login = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (!Object.keys(Errors).length) {
-      notify("you login successfully", "success");
+      toast.success("you login successfully");
     } else {
-      notify("invalid username or password", "error");
+      toast.error("invalid username or password");
       setTouched({
         name: true,
         password: true,
@@ -75,7 +73,6 @@ const Login = () => {
           <button type="submit">Login</button>
         </div>
       </form>
-      <ToastContainer />
     </div>
   );
 };
