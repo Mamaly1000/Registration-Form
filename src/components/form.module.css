@@ -1,16 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 .container {
-  margin-top: 50px;
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
 }
 .header {
   font-size: large;
@@ -47,25 +45,31 @@
 .form div label {
   width: 100%;
   font-size: 0.9rem;
-  text-align: center;
+  text-align: left;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  font-weight: 600;
 }
 .form div input {
   width: 100%;
+  min-height: 30px;
   font-size: 0.9rem;
-  text-align: center;
+  text-align: left;
   outline: none;
   border-width: 0;
   border-radius: 10px;
+  padding-inline: 5px;
   transition: background 0.13s linear;
+  text-transform: capitalize;
 }
 .form div input:focus {
-  background: #c4e9e0;
+  color: #ffffff;
+  background: rgba(0 0 0/0.4);
 }
 .uncompleted {
-  background: rgb(219, 145, 145);
+  color: #ffffff;
+  background: rgba(219 145 145/0.9);
 }
 .form div span {
   position: absolute;
@@ -102,8 +106,9 @@
   text-align: left !important;
 }
 .policies input[type="checkbox"] {
-  width: 30px !important;
-  height: 30px !important;
+  width: 20px !important;
+  min-height: 20px !important;
+  max-height: 20px !important;
   border: 0.1rem solid green !important;
   border-radius: 5px;
   transition: all 0.13s linear;
@@ -111,14 +116,14 @@
   background: #f0fff3;
 }
 .policies input[type="checkbox"]:checked {
-  width: 30px !important;
-  height: 30px !important;
+  width: 20px !important;
+  max-height: 20px !important;
   border-radius: 50%;
   background: #1befba;
 }
 .policies input[type="checkbox"]:focus {
-  width: 30px !important;
-  height: 30px !important;
+  width: 20px !important;
+  max-height: 20px !important;
   outline: none;
   border: 1px solid green !important;
 }
@@ -142,11 +147,11 @@
   padding: 5px 10px;
   cursor: pointer;
 }
-@media screen and (max-width:450px) {
-  .container{
+@media screen and (max-width: 450px) {
+  .container {
     margin-top: 0;
   }
-  .policies label{
-    font-size: .8rem !important;
+  .policies label {
+    font-size: 0.8rem !important;
   }
 }

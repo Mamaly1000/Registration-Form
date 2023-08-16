@@ -26,7 +26,7 @@ const SignUp = () => {
 
   const [Errors, setErrors] = useState({});
   useEffect(() => {
-    setErrors(validate(data,"signup"));
+    setErrors(validate(data, "signup"));
   }, [data, touched]);
   const focusHandler = (event) => {
     setTouched({ ...touched, [event.target.name]: true });
@@ -36,7 +36,6 @@ const SignUp = () => {
     event.preventDefault();
     if (!Object.keys(Errors).length) {
       notify("you sign in successfully", "success");
-      console.log("you submit successfully");
     } else {
       notify("invalid data", "error");
       setTouched({
@@ -52,7 +51,7 @@ const SignUp = () => {
     <div className={styles.container}>
       <form onSubmit={submitHandler} className={styles.form}>
         <h2 className={styles.header}>Sign Up</h2>
-        <div className={styles.Username} >
+        <div className={styles.Username}>
           <label>Name</label>
           <input
             className={Errors.name && touched.name && styles.uncompleted}
@@ -64,7 +63,7 @@ const SignUp = () => {
           />
           {Errors.name && touched.name && <span>{Errors.name}</span>}
         </div>
-        <div className={styles.Email} >
+        <div className={styles.Email}>
           <label>Email</label>
           <input
             className={Errors.email && touched.email && styles.uncompleted}
@@ -76,7 +75,7 @@ const SignUp = () => {
           />
           {Errors.email && touched.email && <span>{Errors.email}</span>}
         </div>
-        <div className={styles.Password} >
+        <div className={styles.Password}>
           <label>Password</label>
           <input
             className={
@@ -92,7 +91,7 @@ const SignUp = () => {
             <span>{Errors.password}</span>
           )}
         </div>
-        <div className={styles.confirmPassword} >
+        <div className={styles.confirmPassword}>
           <label>Confirm Password</label>
           <input
             className={
@@ -128,7 +127,7 @@ const SignUp = () => {
         </div>
         <div className={styles.formBtns}>
           <Link to="/Login">Login</Link>
-       <button type="submit">Sign Up</button>
+          <button type="submit">Sign Up</button>
         </div>
       </form>
       <ToastContainer />

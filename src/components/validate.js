@@ -18,13 +18,10 @@ export const validate = (state, type) => {
   if (type === "signup") {
     if (!state.email) {
       errors.email = "Email required";
-      console.log("email required");
     } else if (!/\S+@\S+\.\S+/.test(state.email)) {
       errors.email = "Email is not valid";
-      console.log("email validation");
     } else {
       delete errors.email;
-      console.log("email error deleted");
     }
 
     if (!state.confirmPassword) {
